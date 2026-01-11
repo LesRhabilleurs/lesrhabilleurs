@@ -30,8 +30,8 @@ const values = [
 
 const services = [
   { icon: Wrench, title: "Réparation", description: "Diagnostic et réparation de tous types de pannes horlogères" },
-  { icon: Settings, title: "Révision complète", description: "Entretien complet pour garantir la longévité de votre montre" },
-  { icon: Droplets, title: "Étanchéité", description: "Test et remise en étanchéité de vos montres de plongée" },
+  { icon: Settings, title: "Révision complète", description: "Entretien complet du mouvement pour garantir la longévité" },
+  { icon: Droplets, title: "Étanchéité", description: "Test et remise en étanchéité de vos montres" },
   { icon: Sparkles, title: "Restauration", description: "Restauration de cadrans, boîtiers et bracelets anciens" },
 ];
 

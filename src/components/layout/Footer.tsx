@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Watch, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Watch, Phone, Mail, Clock } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -57,14 +57,6 @@ export function Footer() {
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 info@lesrhabilleurs.ch
               </a>
-              <div className="flex items-start gap-2 text-sm text-primary-foreground/80">
-                <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                <span>
-                  Rue de la Gare 15<br />
-                  2300 La Chaux-de-Fonds<br />
-                  Suisse
-                </span>
-              </div>
             </div>
           </div>
 
