@@ -15,7 +15,7 @@ export function Footer() {
               <span className="text-xl font-semibold">Les Rhabilleurs</span>
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Artisans horlogers passionnés depuis plus de 30 ans, nous perpétuons 
+              Artisans horlogers passionnés depuis 2020, nous perpétuons 
               la tradition horlogère suisse avec expertise et dévouement.
             </p>
           </div>
