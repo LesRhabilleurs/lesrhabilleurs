@@ -22,8 +22,8 @@ const staggerContainer = {
 };
 
 const values = [
-  { icon: Award, title: "Expertise horlogère", description: "Plus de 30 ans d'expérience" },
-  { icon: Shield, title: "Clients satisfaits", description: "98% de satisfaction client" },
+  { icon: Award, title: "Expertise horlogère", description: "Passion et savoir-faire suisse" },
+  { icon: Shield, title: "Clients satisfaits", description: "Un service personnalisé" },
   { icon: Clock, title: "Garantie 12 mois", description: "Sur toutes nos réparations" },
   { icon: FileCheck, title: "Devis gratuit", description: "Sans engagement" },
 ];
@@ -69,7 +69,7 @@ export default function Home() {
               >
                 Atelier horloger suisse spécialisé dans la réparation, la révision et la 
                 restauration de montres mécaniques. Expertise, passion et savoir-faire 
-                depuis plus de 30 ans.
+                authentique depuis 2020.
               </motion.p>
               <motion.div 
                 variants={fadeInUp}
