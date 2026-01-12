@@ -16,7 +16,7 @@ export const galleryItems: GalleryItem[] = [
     watchBrand: "Omega",
     watchModel: "Constellation",
     description: "Restauration complète d'un cadran Omega Constellation des années 60. Nettoyage délicat des index dorés, traitement des taches d'oxydation, et remise en état des aiguilles dauphines.",
-    photoBefore: "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=600",
+    photoBefore: "https://i.servimg.com/u/f90/18/79/26/08/tm/20210510.jpg",
     photoAfter: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600",
     repairType: "restauration"
   },
