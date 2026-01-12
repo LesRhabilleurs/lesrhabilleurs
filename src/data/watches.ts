@@ -24,7 +24,7 @@ export const watches: Watch[] = [
     description: "La légendaire Moonwatch, référence incontournable pour tout collectionneur. Cette Speedmaster Professional de 1969 a été entièrement révisée dans notre atelier. Le cadran noir mat d'origine présente une patine sublime, les index et aiguilles luminova ont développé une teinte crème caractéristique de l'époque.",
     price: 8500,
     photos: [
-      "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=800",
+      "https://img.ricardostatic.ch/images/dc7b27e1-9bc3-4a1c-8a54-f4bfa74d92a7/t_1000x750/1969-omega-speedmaster-pre-moon-145022-68-eoa-service",
       "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800"
     ],
     isRare: true,
@@ -41,7 +41,7 @@ export const watches: Watch[] = [
     description: "Rolex Datejust 36mm en acier et or jaune 18 carats. Cadran champagne avec index bâtons, bracelet Jubilee d'origine. Cette montre incarne l'élégance intemporelle de la maison Rolex.",
     price: 9200,
     photos: [
-      "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?w=800",
+      "https://www.markworthingtonjewellers.co.uk/images/super/116200_silver_baton_2.jpg",
       "https://images.unsplash.com/photo-1623998021450-85c29c644e0d?w=800"
     ],
     isRare: false,
@@ -58,7 +58,7 @@ export const watches: Watch[] = [
     description: "L'iconique Reverso avec son boîtier réversible Art Déco. Cadran argenté guilloché, chiffres arabes appliqués. Une pièce d'exception qui traverse les décennies avec élégance.",
     price: 6800,
     photos: [
-      "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800",
+      "https://images.hbjo-online.com/webp/sites/masson/uploads/images/678a30b76aef0678a30036e55c_img4857.png",
       "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=800"
     ],
     isRare: false,
