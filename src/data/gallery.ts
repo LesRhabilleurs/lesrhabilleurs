@@ -26,7 +26,7 @@ export const galleryItems: GalleryItem[] = [
     watchBrand: "Breitling",
     watchModel: "Navitimer",
     description: "Révision complète du calibre Valjoux 7750. Démontage intégral, nettoyage ultrason, remplacement des pièces d'usure, réglage sur 6 positions, test d'étanchéité.",
-    photoBefore: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=600",
+    photoBefore: "https://ae01.alicdn.com/kf/S0346cd7b439f458a975ca208faf05027Y/ETA-7750-Movements-High-Accuracy-Clone-Modified-Mechanical-Movement-Replacement-Mechanism-3-6-9-Chrono.jpg",
     photoAfter: "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?w=600",
     repairType: "revision_complete"
   },
