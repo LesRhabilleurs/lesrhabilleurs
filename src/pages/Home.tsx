@@ -71,20 +71,7 @@ export default function Home() {
                 restauration de montres mécaniques. Expertise, passion et savoir-faire 
                 authentique depuis 2020.
               </motion.p>
-              <motion.div 
-                variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <Button asChild size="lg" className="text-base">
-                  <Link to="/devis">
-                    Demander un devis gratuit
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="text-base">
-                  <Link to="/boutique">Découvrir nos montres</Link>
-                </Button>
-              </motion.div>
+              
             </motion.div>
 
             <motion.div
@@ -318,3 +305,4 @@ export default function Home() {
     </div>
   );
 }
+
