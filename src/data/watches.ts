@@ -92,7 +92,7 @@ export const watches: Watch[] = [
     description: "La Black Bay 58 revisite les codes vintage des montres de plongée Tudor des années 50. Boîtier 39mm parfaitement proportionné, lunette rotative unidirectionnelle, étanche à 200m.",
     price: 3800,
     photos: [
-      "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800",
+      "https://img.chrono24.com/images/uhren/43351161-6q7nw1ho0nu4ga9b22nzftjr-ExtraLarge.jpg",
       "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800"
     ],
     isRare: false,
