@@ -44,11 +44,11 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <div className="space-y-3">
               <a 
-                href="tel:+41326661234" 
+                href="tel:+41796691453" 
                 className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                +41 32 666 12 34
+                +41 79 669 14 53
               </a>
               <a 
                 href="mailto:info@lesrhabilleurs.ch" 
