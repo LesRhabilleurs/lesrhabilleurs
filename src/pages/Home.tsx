@@ -83,7 +83,7 @@ export default function Home() {
               <div className="relative aspect-square max-w-lg mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl" />
                 <img
-                  src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=800"
+                  src="https://images.squarespace-cdn.com/content/v1/6408827eb3d36b718ad40c38/bb701216-0b14-4ea9-af7e-a9fef91087bf/Watch+repairer+near+me.jpg"
                   alt="Montre de luxe"
                   className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl"
                 />
@@ -305,4 +305,5 @@ export default function Home() {
     </div>
   );
 }
+
 
