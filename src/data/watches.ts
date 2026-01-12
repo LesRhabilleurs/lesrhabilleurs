@@ -68,14 +68,14 @@ export const watches: Watch[] = [
   {
     id: "4",
     brand: "Patek Philippe",
-    model: "Calatrava 5196",
+    model: "Calatrava 5196J",
     year: 2012,
     movementType: "mecanique",
     condition: "excellent",
-    description: "La quintessence de l'élégance horlogère. Cette Calatrava 5196 en or blanc 18 carats représente la perfection du style classique. Cadran crème avec index goutte, aiguilles feuille.",
+    description: "La quintessence de l'élégance horlogère. Cette Calatrava 5196J en or rose 18 carats représente la perfection du style classique. Cadran blanc avec aiguilles feuille.",
     price: 24500,
     photos: [
-      "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=800",
+      "https://img.chrono24.com/images/uhren/44009378-3fzcx3bt2ua2pff52loh5yku-ExtraLarge.jpg",
       "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=800"
     ],
     isRare: true,
