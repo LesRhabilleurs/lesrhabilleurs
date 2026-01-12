@@ -62,11 +62,11 @@ export function Header() {
           {/* CTA + Mobile Menu */}
           <div className="flex items-center gap-4">
             <a
-              href="tel:+41326661234"
+              href="tel:+41796691453"
               className="hidden lg:flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4" />
-              +41 32 666 12 34
+              +41 79 669 14 53
             </a>
             
             <Button asChild className="hidden sm:inline-flex">
@@ -109,11 +109,11 @@ export function Header() {
                   </nav>
                   <div className="pt-4 border-t border-border">
                     <a
-                      href="tel:+41326661234"
+                      href="tel:+41796691453"
                       className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Phone className="h-5 w-5" />
-                      +41 32 666 12 34
+                      +41 79 669 14 53
                     </a>
                   </div>
                 </div>
