@@ -106,10 +106,10 @@ export const watches: Watch[] = [
     year: 2019,
     movementType: "automatique",
     condition: "tres_bon",
-    description: "Le Portugieser Chronograph 41mm combine élégance et sportivité. Cadran bleu profond, compteurs contrastés, bracelet alligator bleu assorti.",
+    description: "Le Portugieser Chronograph 41mm combine élégance et sportivité. Cadran bleu profond, compteurs contrastés, bracelet alligator noir.",
     price: 7200,
     photos: [
-      "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=800",
+      "https://chpremier.com/cdn/shop/products/iwc-schaffhausen-portugieser-chronograph-iw371606-147884_1024x1024.jpg?v=1620868443",
       "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=800"
     ],
     isRare: false,
