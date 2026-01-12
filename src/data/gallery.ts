@@ -37,7 +37,7 @@ export const galleryItems: GalleryItem[] = [
     watchModel: "Submariner",
     description: "Polissage professionnel d'un boîtier Submariner avec respect des angles d'origine. Élimination des rayures tout en préservant les proportions du boîtier.",
     photoBefore: "https://www.clockmaker.com.au/rolex/polish_rolex_2.jpg",
-    photoAfter: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600",
+    photoAfter: "https://watchlimit.com/wp-content/uploads/2024/11/s-l1600-52-600x800.webp",
     repairType: "polissage"
   },
   {
