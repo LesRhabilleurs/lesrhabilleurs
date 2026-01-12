@@ -79,7 +79,7 @@ export function Header() {
                 <Button variant="ghost" size="icon">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Menu</span>
-                </Button>
+                </Button
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col gap-6 mt-6">
