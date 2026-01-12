@@ -163,8 +163,8 @@ export default function WatchDetail() {
               </Button>
               <p className="text-sm text-muted-foreground text-center">
                 Questions ? Appelez-nous au{" "}
-                <a href="tel:+41326661234" className="text-primary hover:underline">
-                  +41 32 666 12 34
+                <a href="tel:+41796691453" className="text-primary hover:underline">
+                  +41 79 669 14 53
                 </a>
               </p>
             </div>
