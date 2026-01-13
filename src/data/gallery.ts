@@ -46,8 +46,8 @@ export const galleryItems: GalleryItem[] = [
     watchBrand: "Patek Philippe",
     watchModel: "Calatrava",
     description: "Remplacement de la tige de remontoir et de la couronne d'origine. Travail minutieux pour conserver l'authenticité de cette pièce exceptionnelle.",
-    photoBefore: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=600",
-    photoAfter: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=600",
+    photoBefore: "https://i.ebayimg.com/images/g/yG4AAOSwWGxmRH-p/s-l400.jpg",
+    photoAfter: "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/206436-51882",
     repairType: "reparation"
   },
   {
