@@ -99,7 +99,7 @@ export default function QuoteRequest() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          apiKey: "TA_CLE_ICI", // <-- Remplace par ta clé Static Forms
+          apiKey: "sf_46l2fgm7c3fndffe8iaig5e9", // <-- Remplace par ta clé Static Forms
           name: data.clientName,
           email: data.clientEmail,
           message: `
