@@ -66,8 +66,8 @@ export const galleryItems: GalleryItem[] = [
     watchBrand: "Longines",
     watchModel: "Conquest Heritage",
     description: "Révision complète d'une Longines vintage incluant le mouvement, le polissage du boîtier et le remplacement du verre. Pièce remise à neuf dans le respect de son histoire.",
-    photoBefore: "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=600",
-    photoAfter: "https://images.unsplash.com/photo-1623998021450-85c29c644e0d?w=600",
+    photoBefore: "https://static.wixstatic.com/media/dea6ce_a7f8090ead3d40d987854e13458c0465~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+    photoAfter: "https://api.ecom.longines.com/media/catalog/product/9/0/9004-9888328-bottom-gallery-4db95e.jpg?&w=2560",
     repairType: "revision_complete"
   }
 ];
