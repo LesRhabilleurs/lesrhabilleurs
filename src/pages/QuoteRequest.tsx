@@ -108,7 +108,7 @@ export default function QuoteRequest() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          accessKey: "TA_CLE_STATIC_FORMS",
+          accessKey: "sf_46l2fgm7c3fndffe8iaig5e9",
           subject: "Nouvelle demande de devis",
           name: data.clientName,
           email: data.clientEmail,
