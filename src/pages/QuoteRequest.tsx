@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Check, Upload, ArrowRight, ArrowLeft } from "lucide-react";
+import { Check, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,22 +22,17 @@ import { toast } from "sonner";
 /* ---------------- SCHEMA ---------------- */
 
 const quoteSchema = z.object({
-  clientName: z.string().min(2),
-  clientEmail: z.string().email(),
+  clientName: z.string().min(2, "Nom requis"),
+  clientEmail: z.string().email("Email invalide"),
   clientPhone: z.string().optional(),
-  watchBrand: z.string().min(1),
+  watchBrand: z.string().min(1, "Marque requise"),
   watchModel: z.string().optional(),
   watchType: z.enum(["mecanique", "automatique", "quartz", "chronographe", "autre"]),
-  problemDescription: z.string().min(10),
+  problemDescription: z.string().min(10, "Description trop courte"),
+  photosLink: z.string().url("Lien invalide").optional(),
 });
 
 type QuoteFormData = z.infer<typeof quoteSchema>;
-
-const steps = [
-  { id: 1, title: "Vos coordonnées" },
-  { id: 2, title: "Votre montre" },
-  { id: 3, title: "Le problème" },
-];
 
 const watchTypes = [
   { value: "mecanique", label: "Mécanique" },
@@ -47,27 +42,11 @@ const watchTypes = [
   { value: "autre", label: "Autre" },
 ];
 
-/* ---------------- UTILS ---------------- */
-
-const filesToBase64 = (files: File[]) =>
-  Promise.all(
-    files.map(
-      (file) =>
-        new Promise<string>((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.onerror = reject;
-          reader.readAsDataURL(file);
-        })
-    )
-  );
-
 /* ---------------- COMPONENT ---------------- */
 
 export default function QuoteRequest() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [photos, setPhotos] = useState<File[]>([]);
 
   const form = useForm<QuoteFormData>({
     resolver: zodResolver(quoteSchema),
@@ -93,7 +72,9 @@ export default function QuoteRequest() {
   };
 
   const nextStep = async () => {
-    if (await validateStep(currentStep)) setCurrentStep((s) => s + 1);
+    if (await validateStep(currentStep)) {
+      setCurrentStep((s) => s + 1);
+    }
   };
 
   const prevStep = () => setCurrentStep((s) => s - 1);
@@ -102,8 +83,6 @@ export default function QuoteRequest() {
 
   const onSubmit = async (data: QuoteFormData) => {
     try {
-      const photosBase64 = await filesToBase64(photos);
-
       const response = await fetch("https://api.staticforms.xyz/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -116,6 +95,8 @@ export default function QuoteRequest() {
 Nom: ${data.clientName}
 Email: ${data.clientEmail}
 Téléphone: ${data.clientPhone || "-"}
+
+Montre:
 Marque: ${data.watchBrand}
 Modèle: ${data.watchModel || "-"}
 Type: ${data.watchType}
@@ -124,7 +105,7 @@ Problème:
 ${data.problemDescription}
 
 Photos:
-${photosBase64.join("\n")}
+${data.photosLink || "Aucune photo fournie"}
           `,
         }),
       });
@@ -201,29 +182,24 @@ ${photosBase64.join("\n")}
 
               {currentStep === 3 && (
                 <>
-                  <Label>Description *</Label>
+                  <Label>Description du problème *</Label>
                   <Textarea {...register("problemDescription")} rows={5} />
 
-                  <div className="border-dashed border-2 p-4 text-center">
-                    <Upload className="mx-auto mb-2" />
-                    <input
-                      type="file"
-                      accept="image/*"
-                      multiple
-                      onChange={(e) =>
-                        setPhotos(Array.from(e.target.files || []))
-                      }
+                  <div className="mt-4 space-y-2">
+                    <Label>Lien vers les photos (optionnel)</Label>
+                    <Input
+                      placeholder="https://drive.google.com/..."
+                      {...register("photosLink")}
                     />
-                    {photos.length > 0 && (
-                      <p className="text-sm mt-2">
-                        {photos.length} photo(s) sélectionnée(s)
-                      </p>
-                    )}
+                    <p className="text-xs text-muted-foreground">
+                      📸 Hébergez vos photos sur Google Drive, iCloud, Dropbox ou Imgur,
+                      puis collez le lien ici.
+                    </p>
                   </div>
                 </>
               )}
 
-              <div className="flex justify-between pt-4">
+              <div className="flex justify-between pt-6">
                 {currentStep > 1 ? (
                   <Button type="button" variant="outline" onClick={prevStep}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
@@ -251,5 +227,6 @@ ${photosBase64.join("\n")}
     </div>
   );
 }
+
 
 
