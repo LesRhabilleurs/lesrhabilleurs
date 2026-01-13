@@ -56,8 +56,8 @@ export const galleryItems: GalleryItem[] = [
     watchBrand: "Tudor",
     watchModel: "Pelagos",
     description: "Remplacement de tous les joints, test d'étanchéité sous pression à 500m. La montre retrouve ses performances de plongée d'origine.",
-    photoBefore: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=600",
-    photoAfter: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600",
+    photoBefore: "https://hodinkee.imgix.net/uploads/article/hero_image/689/Test.jpg?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12",
+    photoAfter: "https://img.chrono24.com/images/uhren/6ymss7akp9jr-lxax5iqnudg8um63o5y0pvgq-ExtraLarge.jpg",
     repairType: "etancheite"
   },
   {
