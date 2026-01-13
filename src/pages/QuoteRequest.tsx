@@ -90,11 +90,40 @@ export default function QuoteRequest() {
     }
   };
 
+  // ------------------------------
+  // Fonction onSubmit Static Forms
+  // ------------------------------
   const onSubmit = async (data: QuoteFormData) => {
-    // Simulate submission
-    console.log("Quote request:", data);
-    toast.success("Votre demande a été envoyée avec succès !");
-    setIsSubmitted(true);
+    try {
+      const response = await fetch("https://api.staticforms.xyz/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          apiKey: "TA_CLE_ICI", // <-- Remplace par ta clé Static Forms
+          name: data.clientName,
+          email: data.clientEmail,
+          message: `
+Nom: ${data.clientName}
+Email: ${data.clientEmail}
+Téléphone: ${data.clientPhone || "-"}
+Marque: ${data.watchBrand}
+Modèle: ${data.watchModel || "-"}
+Type: ${data.watchType}
+Problème: ${data.problemDescription}
+          `,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Votre demande a été envoyée avec succès !");
+        setIsSubmitted(true);
+      } else {
+        toast.error("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Impossible d'envoyer la demande. Vérifiez votre connexion.");
+    }
   };
 
   if (isSubmitted) {
@@ -152,7 +181,6 @@ export default function QuoteRequest() {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
             <div className="lg:col-span-2">
-              {/* Progress Steps */}
               <div className="flex items-center justify-between mb-8">
                 {steps.map((step, index) => (
                   <div key={step.id} className="flex items-center">
@@ -164,11 +192,7 @@ export default function QuoteRequest() {
                           : "bg-secondary text-muted-foreground"
                       )}
                     >
-                      {currentStep > step.id ? (
-                        <Check className="h-5 w-5" />
-                      ) : (
-                        step.id
-                      )}
+                      {currentStep > step.id ? <Check className="h-5 w-5" /> : step.id}
                     </div>
                     {index < steps.length - 1 && (
                       <div
@@ -185,13 +209,9 @@ export default function QuoteRequest() {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <Card className="border-none shadow-sm">
                   <CardContent className="p-6 md:p-8">
-                    {/* Step 1: Contact Info */}
+                    {/* Step 1 */}
                     {currentStep === 1 && (
-                      <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="space-y-6"
-                      >
+                      <div className="space-y-6">
                         <div>
                           <h2 className="text-xl font-semibold mb-1">Vos coordonnées</h2>
                           <p className="text-sm text-muted-foreground">
@@ -237,21 +257,14 @@ export default function QuoteRequest() {
                             />
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
 
-                    {/* Step 2: Watch Info */}
+                    {/* Step 2 */}
                     {currentStep === 2 && (
-                      <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="space-y-6"
-                      >
+                      <div className="space-y-6">
                         <div>
                           <h2 className="text-xl font-semibold mb-1">Votre montre</h2>
-                          <p className="text-sm text-muted-foreground">
-                            Décrivez la montre que vous souhaitez faire réparer
-                          </p>
                         </div>
 
                         <div className="space-y-4">
@@ -260,7 +273,7 @@ export default function QuoteRequest() {
                             <Input
                               id="watchBrand"
                               {...register("watchBrand")}
-                              placeholder="Ex: Omega, Rolex, Tissot..."
+                              placeholder="Ex: Omega, Rolex..."
                               className={errors.watchBrand ? "border-destructive" : ""}
                             />
                             {errors.watchBrand && (
@@ -296,21 +309,14 @@ export default function QuoteRequest() {
                             </Select>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
 
-                    {/* Step 3: Problem Description */}
+                    {/* Step 3 */}
                     {currentStep === 3 && (
-                      <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="space-y-6"
-                      >
+                      <div className="space-y-6">
                         <div>
                           <h2 className="text-xl font-semibold mb-1">Le problème</h2>
-                          <p className="text-sm text-muted-foreground">
-                            Décrivez le problème rencontré avec votre montre
-                          </p>
                         </div>
 
                         <div className="space-y-4">
@@ -319,9 +325,9 @@ export default function QuoteRequest() {
                             <Textarea
                               id="problemDescription"
                               {...register("problemDescription")}
-                              placeholder="Décrivez le problème en détail: la montre ne fonctionne plus, retard/avance, bruit anormal, verre cassé, étanchéité défaillante..."
                               rows={6}
                               className={errors.problemDescription ? "border-destructive" : ""}
+                              placeholder="Décrivez le problème en détail"
                             />
                             {errors.problemDescription && (
                               <p className="text-sm text-destructive">{errors.problemDescription.message}</p>
@@ -335,19 +341,17 @@ export default function QuoteRequest() {
                             </p>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
 
-                    {/* Navigation Buttons */}
+                    {/* Navigation */}
                     <div className="flex justify-between mt-8 pt-6 border-t border-border">
                       {currentStep > 1 ? (
                         <Button type="button" variant="outline" onClick={prevStep}>
                           <ArrowLeft className="h-4 w-4 mr-2" />
                           Précédent
                         </Button>
-                      ) : (
-                        <div />
-                      )}
+                      ) : <div />}
 
                       {currentStep < 3 ? (
                         <Button type="button" onClick={nextStep}>
@@ -365,90 +369,6 @@ export default function QuoteRequest() {
                 </Card>
               </form>
             </div>
-
-            {/* Sidebar */}
-            <aside className="space-y-6">
-              <Card className="border-none shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4">Notre processus</h3>
-                  <ol className="space-y-4">
-                    <li className="flex gap-3">
-                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                        1
-                      </span>
-                      <div>
-                        <p className="font-medium text-sm">Demande de devis</p>
-                        <p className="text-xs text-muted-foreground">
-                          Décrivez votre montre et le problème
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                        2
-                      </span>
-                      <div>
-                        <p className="font-medium text-sm">Analyse & estimation</p>
-                        <p className="text-xs text-muted-foreground">
-                          Nous vous recontactons sous 24-48h
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                        3
-                      </span>
-                      <div>
-                        <p className="font-medium text-sm">Réparation</p>
-                        <p className="text-xs text-muted-foreground">
-                          Travail effectué par nos experts
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                        4
-                      </span>
-                      <div>
-                        <p className="font-medium text-sm">Livraison</p>
-                        <p className="text-xs text-muted-foreground">
-                          Votre montre vous est retournée
-                        </p>
-                      </div>
-                    </li>
-                  </ol>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-sm bg-primary text-primary-foreground">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    <span className="font-semibold">Besoin d'aide ?</span>
-                  </div>
-                  <p className="text-sm text-primary-foreground/80">
-                    Appelez-nous pour discuter de votre montre
-                  </p>
-                  <a
-                    href="tel:+41326661234"
-                    className="block text-lg font-semibold hover:underline"
-                  >
-                    +41 32 666 12 34
-                  </a>
-                </CardContent>
-              </Card>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Shield className="h-4 w-4 text-primary" />
-                  Devis gratuit et sans engagement
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Clock className="h-4 w-4 text-primary" />
-                  Réponse sous 24-48 heures
-                </div>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
