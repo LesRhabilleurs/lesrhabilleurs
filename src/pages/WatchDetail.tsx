@@ -36,7 +36,7 @@ export default function WatchDetail() {
   }
 
   // ---------------- MAILTO LINK ----------------
-  const mailtoLink = `mailto:contact@lesrhabilleurs.ch?subject=${encodeURIComponent(
+  const mailtoLink = `mailto:info@lesrhabilleurs.ch?subject=${encodeURIComponent(
     `Demande d’information – ${watch.brand} ${watch.model}`
   )}&body=${encodeURIComponent(
     `Bonjour,
