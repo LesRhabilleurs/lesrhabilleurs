@@ -48,7 +48,6 @@ const watchTypes = [
 export default function QuoteRequest() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [photos, setPhotos] = useState<File[]>([]); // <-- stocke les fichiers sélectionnés
 
   const form = useForm<QuoteFormData>({
     resolver: zodResolver(quoteSchema),
@@ -91,33 +90,11 @@ export default function QuoteRequest() {
     }
   };
 
-  // Convertir les fichiers en base64
-  const filesToBase64 = (files: File[]) => {
-    return Promise.all(
-      files.map(file => new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result as string);
-        reader.onerror = error => reject(error);
-        reader.readAsDataURL(file);
-      }))
-    );
-  };
-
+  // ------------------------------
+  // Fonction onSubmit Static Forms
+  // ------------------------------
   const onSubmit = async (data: QuoteFormData) => {
     try {
-      const photosBase64 = await filesToBase64(photos);
-
-      const message = `
-Nom: ${data.clientName}
-Email: ${data.clientEmail}
-Téléphone: ${data.clientPhone || "-"}
-Marque: ${data.watchBrand}
-Modèle: ${data.watchModel || "-"}
-Type: ${data.watchType}
-Problème: ${data.problemDescription}
-Photos: ${photosBase64.join("\n")}
-      `;
-
       const response = await fetch("https://api.staticforms.xyz/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -125,7 +102,15 @@ Photos: ${photosBase64.join("\n")}
           apiKey: "TA_CLE_ICI", // <-- Remplace par ta clé Static Forms
           name: data.clientName,
           email: data.clientEmail,
-          message,
+          message: `
+Nom: ${data.clientName}
+Email: ${data.clientEmail}
+Téléphone: ${data.clientPhone || "-"}
+Marque: ${data.watchBrand}
+Modèle: ${data.watchModel || "-"}
+Type: ${data.watchType}
+Problème: ${data.problemDescription}
+          `,
         }),
       });
 
@@ -171,54 +156,220 @@ Photos: ${photosBase64.join("\n")}
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-secondary via-background to-secondary py-16">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-3xl mx-auto space-y-4"
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+              Demande de devis
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              Décrivez-nous votre montre et le problème rencontré. Nous vous répondrons 
+              sous 24-48 heures avec une estimation gratuite et sans engagement.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Form Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Card className="border-none shadow-sm">
-              <CardContent className="p-6 md:p-8">
-                {/* Step 1, 2, 3 ... */}
-                {/* On garde ton code existant pour les étapes 1-3 */}
-
-                {/* Upload photos */}
-                {currentStep === 3 && (
-                  <div className="mt-6">
-                    <Label>Photos (optionnel)</Label>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      multiple
-                      onChange={(e) => setPhotos(Array.from(e.target.files || []))}
-                      className="mt-2"
-                    />
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Form */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center justify-between mb-8">
+                {steps.map((step, index) => (
+                  <div key={step.id} className="flex items-center">
+                    <div
+                      className={cn(
+                        "w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors",
+                        currentStep >= step.id
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary text-muted-foreground"
+                      )}
+                    >
+                      {currentStep > step.id ? <Check className="h-5 w-5" /> : step.id}
+                    </div>
+                    {index < steps.length - 1 && (
+                      <div
+                        className={cn(
+                          "hidden sm:block w-24 lg:w-32 h-1 mx-2",
+                          currentStep > step.id ? "bg-primary" : "bg-secondary"
+                        )}
+                      />
+                    )}
                   </div>
-                )}
+                ))}
+              </div>
 
-                {/* Navigation Buttons */}
-                <div className="flex justify-between mt-8 pt-6 border-t border-border">
-                  {currentStep > 1 ? (
-                    <Button type="button" variant="outline" onClick={prevStep}>
-                      <ArrowLeft className="h-4 w-4 mr-2" />
-                      Précédent
-                    </Button>
-                  ) : (
-                    <div />
-                  )}
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <Card className="border-none shadow-sm">
+                  <CardContent className="p-6 md:p-8">
+                    {/* Step 1 */}
+                    {currentStep === 1 && (
+                      <div className="space-y-6">
+                        <div>
+                          <h2 className="text-xl font-semibold mb-1">Vos coordonnées</h2>
+                          <p className="text-sm text-muted-foreground">
+                            Comment pouvons-nous vous contacter ?
+                          </p>
+                        </div>
 
-                  {currentStep < 3 ? (
-                    <Button type="button" onClick={nextStep}>
-                      Suivant
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  ) : (
-                    <Button type="submit">
-                      Envoyer ma demande
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </form>
+                        <div className="space-y-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="clientName">Nom complet *</Label>
+                            <Input
+                              id="clientName"
+                              {...register("clientName")}
+                              placeholder="Jean Dupont"
+                              className={errors.clientName ? "border-destructive" : ""}
+                            />
+                            {errors.clientName && (
+                              <p className="text-sm text-destructive">{errors.clientName.message}</p>
+                            )}
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="clientEmail">Email *</Label>
+                            <Input
+                              id="clientEmail"
+                              type="email"
+                              {...register("clientEmail")}
+                              placeholder="jean.dupont@email.ch"
+                              className={errors.clientEmail ? "border-destructive" : ""}
+                            />
+                            {errors.clientEmail && (
+                              <p className="text-sm text-destructive">{errors.clientEmail.message}</p>
+                            )}
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="clientPhone">Téléphone (optionnel)</Label>
+                            <Input
+                              id="clientPhone"
+                              type="tel"
+                              {...register("clientPhone")}
+                              placeholder="+41 79 123 45 67"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 2 */}
+                    {currentStep === 2 && (
+                      <div className="space-y-6">
+                        <div>
+                          <h2 className="text-xl font-semibold mb-1">Votre montre</h2>
+                        </div>
+
+                        <div className="space-y-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="watchBrand">Marque *</Label>
+                            <Input
+                              id="watchBrand"
+                              {...register("watchBrand")}
+                              placeholder="Ex: Omega, Rolex..."
+                              className={errors.watchBrand ? "border-destructive" : ""}
+                            />
+                            {errors.watchBrand && (
+                              <p className="text-sm text-destructive">{errors.watchBrand.message}</p>
+                            )}
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="watchModel">Modèle (optionnel)</Label>
+                            <Input
+                              id="watchModel"
+                              {...register("watchModel")}
+                              placeholder="Ex: Speedmaster, Datejust..."
+                            />
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label>Type de mouvement *</Label>
+                            <Select
+                              value={watch("watchType")}
+                              onValueChange={(value) => setValue("watchType", value as any)}
+                            >
+                              <SelectTrigger>
+                                <SelectValue placeholder="Sélectionnez le type" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {watchTypes.map((type) => (
+                                  <SelectItem key={type.value} value={type.value}>
+                                    {type.label}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 3 */}
+                    {currentStep === 3 && (
+                      <div className="space-y-6">
+                        <div>
+                          <h2 className="text-xl font-semibold mb-1">Le problème</h2>
+                        </div>
+
+                        <div className="space-y-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="problemDescription">Description du problème *</Label>
+                            <Textarea
+                              id="problemDescription"
+                              {...register("problemDescription")}
+                              rows={6}
+                              className={errors.problemDescription ? "border-destructive" : ""}
+                              placeholder="Décrivez le problème en détail"
+                            />
+                            {errors.problemDescription && (
+                              <p className="text-sm text-destructive">{errors.problemDescription.message}</p>
+                            )}
+                          </div>
+
+                          <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
+                            <Upload className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
+                            <p className="text-sm text-muted-foreground">
+                              Photos (optionnel) - Fonctionnalité à venir
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Navigation */}
+                    <div className="flex justify-between mt-8 pt-6 border-t border-border">
+                      {currentStep > 1 ? (
+                        <Button type="button" variant="outline" onClick={prevStep}>
+                          <ArrowLeft className="h-4 w-4 mr-2" />
+                          Précédent
+                        </Button>
+                      ) : <div />}
+
+                      {currentStep < 3 ? (
+                        <Button type="button" onClick={nextStep}>
+                          Suivant
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      ) : (
+                        <Button type="submit">
+                          Envoyer ma demande
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </div>
