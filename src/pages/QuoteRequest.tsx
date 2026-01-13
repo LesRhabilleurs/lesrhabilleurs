@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -16,11 +15,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 /* ---------------- SCHEMA ---------------- */
-
 const quoteSchema = z.object({
   clientName: z.string().min(2, "Nom requis"),
   clientEmail: z.string().email("Email invalide"),
@@ -43,7 +40,6 @@ const watchTypes = [
 ];
 
 /* ---------------- COMPONENT ---------------- */
-
 export default function QuoteRequest() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -64,6 +60,12 @@ export default function QuoteRequest() {
     watch,
   } = form;
 
+  /* ---------------- SCROLL TO TOP ON STEP CHANGE ---------------- */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentStep]);
+
+  /* ---------------- STEP NAVIGATION ---------------- */
   const validateStep = async (step: number) => {
     if (step === 1) return trigger(["clientName", "clientEmail"]);
     if (step === 2) return trigger(["watchBrand", "watchType"]);
@@ -72,15 +74,12 @@ export default function QuoteRequest() {
   };
 
   const nextStep = async () => {
-    if (await validateStep(currentStep)) {
-      setCurrentStep((s) => s + 1);
-    }
+    if (await validateStep(currentStep)) setCurrentStep((s) => s + 1);
   };
 
   const prevStep = () => setCurrentStep((s) => s - 1);
 
   /* ---------------- SUBMIT ---------------- */
-
   const onSubmit = async (data: QuoteFormData) => {
     try {
       const response = await fetch("https://api.staticforms.xyz/submit", {
@@ -120,7 +119,6 @@ ${data.photosLink || "Aucune photo fournie"}
   };
 
   /* ---------------- SUCCESS ---------------- */
-
   if (isSubmitted) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -136,7 +134,6 @@ ${data.photosLink || "Aucune photo fournie"}
   }
 
   /* ---------------- RENDER ---------------- */
-
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto max-w-3xl">
