@@ -9,13 +9,13 @@ import { getWatchById } from "@/data/watches";
 const conditionLabels = {
   excellent: "Excellent",
   tres_bon: "Très bon",
-  bon: "Bon"
+  bon: "Bon",
 };
 
 const movementLabels = {
   mecanique: "Mécanique",
   automatique: "Automatique",
-  quartz: "Quartz"
+  quartz: "Quartz",
 };
 
 export default function WatchDetail() {
@@ -34,6 +34,29 @@ export default function WatchDetail() {
       </div>
     );
   }
+
+  // ---------------- MAILTO LINK ----------------
+  const mailtoLink = `mailto:contact@lesrhabilleurs.ch?subject=${encodeURIComponent(
+    `Demande d’information – ${watch.brand} ${watch.model}`
+  )}&body=${encodeURIComponent(
+    `Bonjour,
+
+Je souhaiterais obtenir plus d’informations concernant la montre suivante :
+
+Marque : ${watch.brand}
+Modèle : ${watch.model}
+Année : ${watch.year}
+Mouvement : ${movementLabels[watch.movementType]}
+Prix : CHF ${watch.price.toLocaleString("fr-CH")}
+
+Lien de la montre :
+${window.location.href}
+
+Merci d’avance.
+
+Cordialement,
+`
+  )}`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -158,12 +181,17 @@ export default function WatchDetail() {
 
             {/* CTA */}
             <div className="space-y-4 pt-4">
-              <Button size="lg" className="w-full text-base">
-                Nous contacter pour cette montre
+              <Button asChild size="lg" className="w-full text-base">
+                <a href={mailtoLink}>
+                  Nous contacter pour cette montre
+                </a>
               </Button>
               <p className="text-sm text-muted-foreground text-center">
                 Questions ? Appelez-nous au{" "}
-                <a href="tel:+41796691453" className="text-primary hover:underline">
+                <a
+                  href="tel:+41796691453"
+                  className="text-primary hover:underline"
+                >
                   +41 79 669 14 53
                 </a>
               </p>
@@ -186,3 +214,4 @@ export default function WatchDetail() {
     </div>
   );
 }
+
