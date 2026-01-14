@@ -25,7 +25,7 @@ export const watches: Watch[] = [
     price: 8500,
     photos: [
       "https://img.ricardostatic.ch/images/dc7b27e1-9bc3-4a1c-8a54-f4bfa74d92a7/t_1000x750/1969-omega-speedmaster-pre-moon-145022-68-eoa-service",
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800"
+      ""
     ],
     isRare: true,
     revisionDetails: "Révision complète du calibre 861, remplacement des joints, polissage du boîtier, étanchéité testée à 50m.",
@@ -42,7 +42,7 @@ export const watches: Watch[] = [
     price: 9200,
     photos: [
       "https://www.markworthingtonjewellers.co.uk/images/super/116200_silver_baton_2.jpg",
-      "https://images.unsplash.com/photo-1623998021450-85c29c644e0d?w=800"
+      ""
     ],
     isRare: false,
     revisionDetails: "Service complet Rolex, calibre 3135 révisé, étanchéité 100m vérifiée, polissage professionnel.",
@@ -59,7 +59,7 @@ export const watches: Watch[] = [
     price: 6800,
     photos: [
       "https://images.hbjo-online.com/webp/sites/masson/uploads/images/678a30b76aef0678a30036e55c_img4857.png",
-      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=800"
+      ""
     ],
     isRare: false,
     revisionDetails: "Révision complète du mouvement manuel, nettoyage ultrason du boîtier, nouveau bracelet cuir.",
@@ -76,7 +76,7 @@ export const watches: Watch[] = [
     price: 24500,
     photos: [
       "https://img.chrono24.com/images/uhren/44009378-3fzcx3bt2ua2pff52loh5yku-ExtraLarge.jpg",
-      "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=800"
+      ""
     ],
     isRare: true,
     revisionDetails: "Service complet Patek Philippe, calibre 215 PS révisé, nouveau bracelet alligator.",
@@ -93,7 +93,7 @@ export const watches: Watch[] = [
     price: 3800,
     photos: [
       "https://img.chrono24.com/images/uhren/43351161-6q7nw1ho0nu4ga9b22nzftjr-ExtraLarge.jpg",
-      "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800"
+      ""
     ],
     isRare: false,
     revisionDetails: "Contrôle complet, étanchéité vérifiée, bracelet acier ajusté.",
@@ -110,7 +110,7 @@ export const watches: Watch[] = [
     price: 7200,
     photos: [
       "https://chpremier.com/cdn/shop/products/iwc-schaffhausen-portugieser-chronograph-iw371606-147884_1024x1024.jpg?v=1620868443",
-      "https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=800"
+      ""
     ],
     isRare: false,
     revisionDetails: "Service complet du calibre 69355, verre saphir vérifié, étanchéité 30m.",
