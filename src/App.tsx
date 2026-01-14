@@ -1,10 +1,9 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import ScrollToTop from "./components/ScrollToTop";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 
 import Home from "./pages/Home";
@@ -16,6 +15,19 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+/**
+ * Composant interne SAFE pour forcer le scroll en haut
+ */
+const ScrollHandler = (): null => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+};
+
 const App = (): JSX.Element => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -24,8 +36,7 @@ const App = (): JSX.Element => {
         <Sonner />
 
         <BrowserRouter>
-          {/* 🔽 FORCE le scroll en haut à chaque changement de page */}
-          <ScrollToTop />
+          <ScrollHandler />
 
           <Layout>
             <Routes>
@@ -44,5 +55,7 @@ const App = (): JSX.Element => {
 };
 
 export default App;
+
+
 
 
