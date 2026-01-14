@@ -3,7 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import ScrollToTop from "./components/ScrollToTop";
 import { Layout } from "@/components/layout/Layout";
+
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import WatchDetail from "./pages/WatchDetail";
@@ -13,25 +16,33 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/boutique" element={<Shop />} />
-            <Route path="/boutique/:id" element={<WatchDetail />} />
-            <Route path="/galerie" element={<Gallery />} />
-            <Route path="/devis" element={<QuoteRequest />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = (): JSX.Element => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+
+        <BrowserRouter>
+          {/* 🔽 FORCE le scroll en haut à chaque changement de page */}
+          <ScrollToTop />
+
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/boutique" element={<Shop />} />
+              <Route path="/boutique/:id" element={<WatchDetail />} />
+              <Route path="/galerie" element={<Gallery />} />
+              <Route path="/devis" element={<QuoteRequest />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
+
+
