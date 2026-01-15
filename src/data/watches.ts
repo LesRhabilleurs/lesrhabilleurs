@@ -73,7 +73,7 @@ export const watches: Watch[] = [
     movementType: "mecanique",
     condition: "excellent",
     description: "La quintessence de l'élégance horlogère. Cette Calatrava 5196J en or rose 18 carats représente la perfection du style classique. Cadran blanc avec aiguilles feuille.",
-    price: 24500,
+    price: 19800,
     photos: [
       "https://img.chrono24.com/images/uhren/44009378-3fzcx3bt2ua2pff52loh5yku-ExtraLarge.jpg",
       
