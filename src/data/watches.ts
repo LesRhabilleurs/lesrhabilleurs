@@ -38,7 +38,7 @@ export const watches: Watch[] = [
     year: 2015,
     movementType: "automatique",
     condition: "excellent",
-    description: "Rolex Datejust 36mm en acier et or jaune 18 carats. Cadran champagne avec index bâtons, bracelet Jubilee d'origine. Cette montre incarne l'élégance intemporelle de la maison Rolex.",
+    description: "Rolex Datejust 36mm en acier et or jaune 18 carats. Cadran champagne avec index bâtons, bracelet Jubilee d'origine. Cette montre incarne l'élégance intemporelle de la maison Rolex. Ref. 116200",
     price: 9200,
     photos: [
       "https://www.markworthingtonjewellers.co.uk/images/super/116200_silver_baton_2.jpg",
