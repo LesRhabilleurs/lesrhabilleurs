@@ -20,9 +20,9 @@ export const watches: Watch[] = [
     model: "Speedmaster Professional",
     year: 1969,
     movementType: "mecanique",
-    condition: "excellent",
-    description: "La légendaire Moonwatch, référence incontournable pour tout collectionneur. Cette Speedmaster Professional de 1969 a été entièrement révisée dans notre atelier. Le cadran noir mat d'origine présente une patine sublime, les index et aiguilles luminova ont développé une teinte crème caractéristique de l'époque.",
-    price: 8500,
+    condition: "bon",
+    description: "La légendaire Moonwatch, référence incontournable pour tout collectionneur. Cette Speedmaster Professional de 1969 a été entièrement révisée dans notre atelier. Le cadran noir mat d'origine présente une patine sublime, les index et aiguilles luminova ont développé une teinte crème caractéristique de l'époque. Ref. 145.022-68",
+    price: 8300,
     photos: [
       "https://img.ricardostatic.ch/images/dc7b27e1-9bc3-4a1c-8a54-f4bfa74d92a7/t_1000x750/1969-omega-speedmaster-pre-moon-145022-68-eoa-service",
       
