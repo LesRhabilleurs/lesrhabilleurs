@@ -89,7 +89,7 @@ export const watches: Watch[] = [
     year: 2020,
     movementType: "automatique",
     condition: "excellent",
-    description: "La Black Bay 58 revisite les codes vintage des montres de plongée Tudor des années 50. Boîtier 39mm parfaitement proportionné, lunette rotative unidirectionnelle, étanche à 200m.",
+    description: "La Black Bay 58 revisite les codes vintage des montres de plongée Tudor des années 50. Boîtier 39mm parfaitement proportionné, lunette rotative unidirectionnelle, étanche à 200m. Ref. M79030N-0001",
     price: 3800,
     photos: [
       "https://img.chrono24.com/images/uhren/43351161-6q7nw1ho0nu4ga9b22nzftjr-ExtraLarge.jpg",
