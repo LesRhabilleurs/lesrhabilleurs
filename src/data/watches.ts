@@ -29,7 +29,7 @@ export const watches: Watch[] = [
     ],
     isRare: true,
     revisionDetails: "Révision complète du calibre 861, remplacement des joints, polissage du boîtier, étanchéité testée à 50m.",
-    warrantyMonths: 24
+    warrantyMonths: 12
   },
   {
     id: "2",
@@ -114,7 +114,7 @@ export const watches: Watch[] = [
     ],
     isRare: false,
     revisionDetails: "Service complet du calibre 69355, verre saphir vérifié, étanchéité 30m.",
-    warrantyMonths: 12
+    warrantyMonths: 24
   }
 ];
 
