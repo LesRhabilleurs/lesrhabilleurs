@@ -55,7 +55,7 @@ export const watches: Watch[] = [
     year: 2018,
     movementType: "mecanique",
     condition: "tres_bon",
-    description: "L'iconique Reverso avec son boîtier réversible Art Déco. Cadran argenté guilloché, chiffres arabes appliqués. Une pièce d'exception qui traverse les décennies avec élégance.",
+    description: "L'iconique Reverso avec son boîtier réversible Art Déco. Cadran argenté guilloché, chiffres arabes appliqués. Une pièce d'exception qui traverse les décennies avec élégance. Ref. Q3848420",
     price: 6800,
     photos: [
       "https://images.hbjo-online.com/webp/sites/masson/uploads/images/678a30b76aef0678a30036e55c_img4857.png",
