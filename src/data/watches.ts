@@ -19,7 +19,7 @@ export const watches: Watch[] = [
     brand: "Omega",
     model: "Speedmaster Professional",
     year: 1969,
-    movementType: "mecanique",
+    movementType: "automatique",
     condition: "bon",
     description: "La légendaire Moonwatch, référence incontournable pour tout collectionneur. Cette Speedmaster Professional de 1969 a été entièrement révisée dans notre atelier. Le cadran noir mat d'origine présente une patine sublime, les index et aiguilles luminova ont développé une teinte crème caractéristique de l'époque. Ref. 145.022-68",
     price: 8300,
