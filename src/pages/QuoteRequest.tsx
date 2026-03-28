@@ -26,7 +26,7 @@ const quoteSchema = z.object({
   watchModel: z.string().optional(),
   watchType: z.enum(["mecanique", "automatique", "quartz", "chronographe", "autre"]),
   problemDescription: z.string().min(10, "Description trop courte"),
-  photosLink: z.string().url("Lien invalide").optional(),
+  photosLink: z.string().optional().or(z.literal("")),
 });
 
 type QuoteFormData = z.infer<typeof quoteSchema>;
