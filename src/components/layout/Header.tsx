@@ -10,7 +10,7 @@ const navigation = [
   { name: "Boutique", href: "/boutique" },
   { name: "Galerie", href: "/galerie" },
   { name: "Demande de devis", href: "/devis" },
-  { name: "Actualités", href: "/news" },
+  { name: "Actualités", href: "/actualites" },
 ];
 
 export function Header() {
