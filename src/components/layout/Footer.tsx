@@ -36,6 +36,9 @@ export function Footer() {
               <Link to="/devis" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Demande de devis
               </Link>
+              <Link to="/actualites" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                Actualités
+              </Link>
             </nav>
           </div>
 
