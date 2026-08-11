@@ -31,6 +31,14 @@ export const newsItems: NewsItem[] = [
     content:
       "Du 16 au 19 juin 2026, Genève accueillera une nouvelle édition de l’EPHJ à Palexpo, l’un des rendez-vous majeurs de la haute précision et de l’industrie horlogère. L’événement réunira des centaines d’exposants venus présenter leurs dernières innovations, leurs savoir-faire et les technologies qui façonnent l’horlogerie de demain. Cette édition s’annonce particulièrement intéressante avec la présence de près de 800 entreprises issues de 18 pays. L’horlogerie et la joaillerie resteront au cœur du salon, aux côtés de la microtechnique, des technologies médicales et d’autres secteurs liés à la haute précision. Parmi les temps forts annoncés figurera également un inédit « Global Watchmaking G7 », réunissant les principales nations horlogères autour des grands enjeux et des évolutions futures de l’industrie. Un rendez-vous incontournable pour découvrir les nouvelles tendances, rencontrer les acteurs de la branche et prendre le pouls de l’horlogerie suisse et internationale."
   },
+  {
+    id: 4,
+    title: "Le TWS 2026 annulé",
+    date: "10 mai 2026",
+    image: "/article-4.jpg",
+    content:
+      "Le Technical Watchmaker Show (TWS), rendez-vous important de la sous-traitance horlogère et de la microtechnique à La Chaux-de-Fonds, n’aura finalement pas lieu en 2026. Prévue du 15 au 18 septembre, cette septième édition a été annulée par les organisateurs en raison d’un nombre insuffisant d’exposants. Seuls 42 participants étaient inscrits, contre 67 lors de l’édition précédente, dans un contexte économique difficile pour l’industrie horlogère. Cette annulation témoigne des défis que traverse actuellement la branche et de l’impact de la conjoncture sur les acteurs de la sous-traitance. Le TWS donne toutefois déjà rendez-vous aux professionnels en septembre 2027 pour une nouvelle édition."
+  },
 
   // Ajoute tes prochains articles ici
 ];
