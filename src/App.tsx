@@ -12,6 +12,8 @@ import WatchDetail from "./pages/WatchDetail";
 import Gallery from "./pages/Gallery";
 import QuoteRequest from "./pages/QuoteRequest";
 import NotFound from "./pages/NotFound";
+import News from "./pages/News";
+
 
 const queryClient = new QueryClient();
 
@@ -46,6 +48,7 @@ const App = (): JSX.Element => {
               <Route path="/galerie" element={<Gallery />} />
               <Route path="/devis" element={<QuoteRequest />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/actualites" element={<News />} />
             </Routes>
           </Layout>
         </BrowserRouter>
