@@ -39,6 +39,14 @@ export const newsItems: NewsItem[] = [
     content:
       "Le Technical Watchmaker Show (TWS), rendez-vous important de la sous-traitance horlogère et de la microtechnique à La Chaux-de-Fonds, n’aura finalement pas lieu en 2026. Prévue du 15 au 18 septembre, cette septième édition a été annulée par les organisateurs en raison d’un nombre insuffisant d’exposants. Seuls 42 participants étaient inscrits, contre 67 lors de l’édition précédente, dans un contexte économique difficile pour l’industrie horlogère. Cette annulation témoigne des défis que traverse actuellement la branche et de l’impact de la conjoncture sur les acteurs de la sous-traitance. Le TWS donne toutefois déjà rendez-vous aux professionnels en septembre 2027 pour une nouvelle édition."
   },
+  {
+    id: 5,
+    title: "Watches and Wonders Geneva 2026 : les nouveautés horlogères à ne pas manquer",
+    date: "05 avril 2026",
+    image: "/article-5.jpg",
+    content:
+      "Du 14 au 20 avril 2026, Genève accueillera une nouvelle édition de Watches and Wonders, l’un des rendez-vous majeurs de l’horlogerie mondiale. Les plus grandes maisons présenteront leurs nouvelles créations, entre innovations techniques, nouvelles complications et réinterprétations de modèles emblématiques. Rolex, Patek Philippe, Cartier, Audemars Piguet, Tudor, TAG Heuer et de nombreuses autres marques seront au rendez-vous. Cette édition sera également l’occasion de découvrir les nouvelles tendances de l’horlogerie et les pièces qui pourraient marquer l’année 2026."
+  },
 
   // Ajoute tes prochains articles ici
 ];
