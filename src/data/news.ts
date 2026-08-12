@@ -55,6 +55,15 @@ export const newsItems: NewsItem[] = [
     content:
       "Dévoilée en 2026, la Tonda PF Automatic 36 mm Alta Rosa joue la carte de la discrétion et de l’élégance. Son cadran rose Alta Rosa, réalisé avec un guillochage manuel Grain d’Orge, est associé à une boîte de 36,1 mm en acier et à une lunette en platine 950. À l’intérieur, le calibre manufacture PF770-HM offre 60 heures de réserve de marche, tandis que le bracelet intégré en acier et l’étanchéité à 100 mètres en font une montre aussi raffinée que polyvalente. Affichée à 21 900 CHF, cette nouvelle Tonda PF mise davantage sur la subtilité que sur l’exubérance."
   },
+  {
+    id: 7,
+    title: "Audemars Piguet : L’Arc, la nouvelle manufacture du Brassus",
+    date: "01 février 2026",
+    image: "/article-7.jpg",
+    content:
+      "Audemars Piguet a inauguré en 2026 L’Arc, sa nouvelle manufacture au Brassus, après trois années de travaux. Avec ses 23’700 m² et sa façade vitrée incurvée de 321 mètres, le bâtiment réunit près de 700 collaborateurs auparavant répartis dans plusieurs sites de la Vallée de Joux. Pensé autour de la collaboration et de la durabilité, L’Arc bénéficie notamment de façades en verre électrochrome et de la certification Minergie-ECO. La manufacture intègre également des systèmes automatisés destinés à optimiser la production et le stockage, tout en laissant davantage de place aux métiers nécessitant le savoir-faire manuel des horlogers. Un nouveau chapitre pour Audemars Piguet, qui cherche ainsi à réunir tradition, innovation et capacité de production au cœur de la Vallée de Joux."
+  },
+
 
   // Ajoute tes prochains articles ici
 ];
