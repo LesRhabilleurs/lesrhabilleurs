@@ -19,7 +19,7 @@ export const newsItems: NewsItem[] = [
     id: 2,
     title: "Oris Star Edition",
     date: "05 juillet 2026",
-    image: "/article-2.jpg",
+    image: "/article-02.jpg",
     content:
       "Oris dévoile la nouvelle Star Edition, une montre élégante qui associe l’esprit sportif de la maison à une finition raffinée. Son design équilibré, son cadran soigneusement travaillé et ses détails soignés lui donnent une présence à la fois moderne et intemporelle. Une nouvelle édition qui vient enrichir l’univers Oris avec une pièce sobre, élégante et pleine de caractère."
   },
