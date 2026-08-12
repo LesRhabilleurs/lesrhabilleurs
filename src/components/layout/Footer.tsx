@@ -89,7 +89,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-center text-sm text-primary-foreground/60">
-            © {2020} Les Rhabilleurs. Tous droits réservés.
+            © {2023} Les Rhabilleurs. Tous droits réservés.
           </p>
         </div>
       </div>
