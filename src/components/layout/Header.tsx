@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 const navigation = [
   { name: "Accueil", href: "/" },
-  { name: "Boutique", href: "/boutique" },
   { name: "Réalisations", href: "/galerie" },
+  { name: "Boutique", href: "/boutique" },
   { name: "Demande de devis", href: "/devis" },
   { name: "Actualités", href: "/actualites" },
 ];
