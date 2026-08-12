@@ -13,6 +13,7 @@ import Gallery from "./pages/Gallery";
 import QuoteRequest from "./pages/QuoteRequest";
 import NotFound from "./pages/NotFound";
 import News from "./pages/News";
+import LegalNotice from "./pages/LegalNotice";
 
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = (): JSX.Element => {
               <Route path="/devis" element={<QuoteRequest />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/actualites" element={<News />} />
+              <Route path="/informations-legales" element={<LegalNotice />} />
             </Routes>
           </Layout>
         </BrowserRouter>
