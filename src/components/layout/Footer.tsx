@@ -27,17 +27,8 @@ export function Footer() {
               <Link to="/" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Accueil
               </Link>
-              <Link to="/boutique" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                Boutique
-              </Link>
-              <Link to="/galerie" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                Galerie
-              </Link>
               <Link to="/devis" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Demande de devis
-              </Link>
-              <Link to="/actualites" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                Actualités
               </Link>
               <Link to="/informations-legales" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Informations légales
