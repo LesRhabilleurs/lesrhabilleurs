@@ -33,7 +33,7 @@ export default function News() {
             </h1>
 
             <p className="text-muted-foreground text-lg">
-              Chaque semaine, retrouvez une nouvelle actualité
+              Chaque mois, retrouvez une nouvelle actualité
               autour du monde de l'horlogerie.
             </p>
           </motion.div>
