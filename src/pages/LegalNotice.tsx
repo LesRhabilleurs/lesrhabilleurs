@@ -99,7 +99,7 @@ export default function LegalNotice() {
                   <span className="font-medium text-foreground">
                     Téléphone :
                   </span>{" "}
-                  [à compléter]
+                  [+41796691453]
                 </p>
               </div>
             </motion.section>
@@ -267,7 +267,7 @@ export default function LegalNotice() {
             transition={{ delay: 0.5 }}
             className="text-sm text-muted-foreground text-center mt-10"
           >
-            Dernière mise à jour : [à compléter]
+            Dernière mise à jour : [13 août 2026]
           </motion.p>
         </div>
       </section>
