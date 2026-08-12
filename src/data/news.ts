@@ -47,6 +47,14 @@ export const newsItems: NewsItem[] = [
     content:
       "Du 14 au 20 avril 2026, Genève accueillera une nouvelle édition de Watches and Wonders, l’un des rendez-vous majeurs de l’horlogerie mondiale. Les plus grandes maisons présenteront leurs nouvelles créations, entre innovations techniques, nouvelles complications et réinterprétations de modèles emblématiques. Rolex, Patek Philippe, Cartier, Audemars Piguet, Tudor, TAG Heuer et de nombreuses autres marques seront au rendez-vous. Cette édition sera également l’occasion de découvrir les nouvelles tendances de l’horlogerie et les pièces qui pourraient marquer l’année 2026."
   },
+  {
+    id: 6,
+    title: "Parmigiani Fleurier Tonda PF Automatic Alta Rosa",
+    date: "08 mars 2026",
+    image: "/article-6.jpg",
+    content:
+      "Dévoilée en 2026, la Tonda PF Automatic 36 mm Alta Rosa joue la carte de la discrétion et de l’élégance. Son cadran rose Alta Rosa, réalisé avec un guillochage manuel Grain d’Orge, est associé à une boîte de 36,1 mm en acier et à une lunette en platine 950. À l’intérieur, le calibre manufacture PF770-HM offre 60 heures de réserve de marche, tandis que le bracelet intégré en acier et l’étanchéité à 100 mètres en font une montre aussi raffinée que polyvalente. Affichée à 21 900 CHF, cette nouvelle Tonda PF mise davantage sur la subtilité que sur l’exubérance."
+  },
 
   // Ajoute tes prochains articles ici
 ];
