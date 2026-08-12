@@ -8,7 +8,7 @@ import logo from "@/assets/logo.png";
 const navigation = [
   { name: "Accueil", href: "/" },
   { name: "Boutique", href: "/boutique" },
-  { name: "Galerie", href: "/galerie" },
+  { name: "Réalisations", href: "/galerie" },
   { name: "Demande de devis", href: "/devis" },
   { name: "Actualités", href: "/actualites" },
 ];
