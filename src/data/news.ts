@@ -63,6 +63,15 @@ export const newsItems: NewsItem[] = [
     content:
       "Audemars Piguet a inauguré en 2026 L’Arc, sa nouvelle manufacture au Brassus, après trois années de travaux. Avec ses 23’700 m² et sa façade vitrée incurvée de 321 mètres, le bâtiment réunit près de 700 collaborateurs auparavant répartis dans plusieurs sites de la Vallée de Joux. Pensé autour de la collaboration et de la durabilité, L’Arc bénéficie notamment de façades en verre électrochrome et de la certification Minergie-ECO. La manufacture intègre également des systèmes automatisés destinés à optimiser la production et le stockage, tout en laissant davantage de place aux métiers nécessitant le savoir-faire manuel des horlogers. Un nouveau chapitre pour Audemars Piguet, qui cherche ainsi à réunir tradition, innovation et capacité de production au cœur de la Vallée de Joux."
   },
+  {
+    id: 8,
+    title: "Maurice Lacroix AIKON Skeleton Label Noir — la nouvelle pièce qui frappe fort",
+    date: "11 janvier 2026",
+    image: "/article-08.jpg",
+    content:
+      "Sortie en janvier 2026, la Maurice Lacroix AIKON Manufacture Skeleton Label Noir 45 mm est une édition limitée à seulement 100 exemplaires. Son boîtier en acier noir DLC, son cadran squelette et ses touches turquoise lui donnent un look très sportif et agressif. Elle embarque le calibre manufacture ML234, offrant environ 50 heures de réserve de marche, et est livrée avec deux bracelets interchangeables. Une pièce exclusive proposée autour de 6 900 CHF."
+  },
+
 
 
   // Ajoute tes prochains articles ici
