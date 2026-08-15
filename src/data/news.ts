@@ -71,6 +71,14 @@ export const newsItems: NewsItem[] = [
     content:
       "Sortie en janvier 2026, la Maurice Lacroix AIKON Manufacture Skeleton Label Noir 45 mm est une édition limitée à seulement 100 exemplaires. Son boîtier en acier noir DLC, son cadran squelette et ses touches turquoise lui donnent un look très sportif et agressif. Elle embarque le calibre manufacture ML234, offrant environ 50 heures de réserve de marche, et est livrée avec deux bracelets interchangeables. Une pièce exclusive proposée autour de 6 900 CHF."
   },
+  {
+    id: 9,
+    title: "Frédérique Constant Highlife Moonphase Onyx Moon",
+    date: "07 décembre 2025",
+    image: "/article-9.jpg",
+    content:
+      "Nouvelle collaboration avec Time+Tide, cette Highlife de 39 mm se distingue par son cadran en onyx noir, sa phase de lune et ses touches de rouge. Elle embarque le calibre manufacture FC-716, offrant 72 heures de réserve de marche. Limitée à seulement 100 exemplaires, elle est proposée avec un bracelet intégré en acier ainsi que deux bracelets supplémentaires. Prix : environ 4 700 CHF."
+  },
 
 
 
