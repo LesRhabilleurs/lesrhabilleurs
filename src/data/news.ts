@@ -79,6 +79,14 @@ export const newsItems: NewsItem[] = [
     content:
       "Nouvelle collaboration avec Time+Tide, cette Highlife de 39 mm se distingue par son cadran en onyx noir, sa phase de lune et ses touches de rouge. Elle embarque le calibre manufacture FC-716, offrant 72 heures de réserve de marche. Limitée à seulement 100 exemplaires, elle est proposée avec un bracelet intégré en acier ainsi que deux bracelets supplémentaires. Prix : environ 4 700 CHF."
   },
+  {
+    id: 10,
+    title: "Glashütte Original célèbre 180 ans d’horlogerie avec une édition anniversaire",
+    date: "02 novembre 2025",
+    image: "/article-10.jpg",
+    content:
+      "Pour célébrer ses 180 ans d’horlogerie, Glashütte Original dévoile en septembre 2025 la PanoMaticLunar Anniversary Edition, une série limitée à 180 exemplaires. Son boîtier de 40 mm en platine accueille un cadran en aventurine bleu profond, évoquant un ciel étoilé, tandis que la phase de lune et la date panoramique renforcent son esthétique sophistiquée. Animée par le Calibre 92-14, doté de 100 heures de réserve de marche, cette création anniversaire associe savoir-faire traditionnel et innovation horlogère."
+  },
 
 
 
