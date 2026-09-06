@@ -91,7 +91,7 @@ export default function LegalNotice() {
                     href="mailto:info@lesrhabilleurs.ch"
                     className="text-primary hover:underline"
                   >
-                    info@lesrhabilleurs.ch
+                    lesrhabilleurs@hotmail.com
                   </a>
                 </p>
 
@@ -254,7 +254,7 @@ export default function LegalNotice() {
                   href="mailto:info@lesrhabilleurs.ch"
                   className="text-primary font-medium hover:underline"
                 >
-                  info@lesrhabilleurs.ch
+                  lesrhabilleurs@hotmail.com
                 </a>
               </p>
             </motion.section>
