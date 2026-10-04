@@ -8,6 +8,14 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    id: 12,
+    title: "Nordic Watch Awards : l’horlogerie nordique sous les projecteurs",
+    date: "04 octobre 2026",
+    image: "/article-12.jpg",
+    content:
+      "Les Nordic Watch Awards 2026 mettent une nouvelle fois à l’honneur la créativité et le savoir-faire horloger des pays nordiques. Pour cette deuxième édition, 38 montres sont en compétition dans différentes catégories, avec notamment les prix Unlimited, Challenger et People’s Choice. Le prix Unlimited récompense une montre mécanique sans limite de prix, tandis que la catégorie Challenger est ouverte aux montres mécaniques ou à quartz dont le prix ne dépasse pas 2 000 CHF. Le public peut également participer en votant pour son modèle favori. Cette année, le Prix spécial du jury sera remis à l’horloger danois Svend Andersen, figure majeure de l’horlogerie indépendante. Ancien collaborateur de Patek Philippe, il est notamment reconnu pour ses montres à heures universelles, ses heures sautantes et son travail dans le domaine des complications horlogères. Les lauréats seront dévoilés lors du gala des Nordic Watch Awards, le 9 octobre 2026 à Stockholm. L’événement s’inscrit dans Stockholm Time, salon consacré exclusivement aux acteurs de l’horlogerie nordique."
+  },
+  {
     id: 11,
     title: "Geneva Watch Days 2026 : Zenith frappe fort",
     date: "06 septembre 2026",
