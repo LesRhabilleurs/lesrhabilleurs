@@ -8,6 +8,14 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
+    id: 13,
+    title: "Zenith envisage près de 200 suppressions de postes : la manufacture du Locle lourdement touchée",
+    date: "08 novembre 2026",
+    image: "/article-13.jpg",
+    content:
+      "La manufacture horlogère Zenith, basée au Locle et appartenant au groupe LVMH, envisage la suppression d’environ 200 emplois dans le monde, dont près de 100 en Suisse. Face à un marché difficile, la marque souhaite recentrer ses activités sur la haute horlogerie, une restructuration qui représente un nouveau coup dur pour l’industrie horlogère de l’Arc jurassien."
+  },
+  {
     id: 12,
     title: "Nordic Watch Awards : l’horlogerie nordique sous les projecteurs",
     date: "04 octobre 2026",
